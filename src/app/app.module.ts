@@ -1,8 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {FwModule} from '../fw/fw.module';
+import {FrameworkConfigService} from '../fw/services/framework-config.service';
+import { ScreenBelowLarge } from '../fw/directives/screen-below-large.directive';
 
 
 @NgModule({
@@ -10,9 +15,14 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    FwModule
   ],
-  providers: [],
+  providers: [
+    FrameworkConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
